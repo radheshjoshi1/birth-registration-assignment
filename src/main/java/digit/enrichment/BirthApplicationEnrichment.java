@@ -39,8 +39,7 @@ public class BirthApplicationEnrichment {
                 // Enrich UUID
                 application.setId(UUID.randomUUID().toString());
 
-                application.getFather().setUuid(application.getId());
-                application.getMother().setUuid(application.getId());
+
 
                 // Enrich registration Id
                 application.getAddress().setRegistrationId(application.getId());
