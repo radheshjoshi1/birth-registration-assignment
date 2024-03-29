@@ -99,19 +99,14 @@ public class BirthApplicationEnrichment {
         log.info(fatherUser.toString());
         User fatherApplicant =
                 User.builder()
-//                .aadhaarNumber(fatherUser.getAadhaarNumber())
-//                .accountLocked(fatherUser.getAccountLocked())
-//                .active(fatherUser.getActive())
-//                .altContactNumber(fatherUser.getAltContactNumber())
-//                .bloodGroup(fatherUser.getBloodGroup())
-//                .correspondenceAddress(fatherUser.getCorrespondenceAddress())
-//                .correspondenceCity(fatherUser.getCorrespondenceCity())
-//                .correspondencePincode(fatherUser.getCorrespondencePincode())
-//                .gender(fatherUser.getGender())
+                        .userName(fatherUser.getUserName())
+                        .mobileNumber(fatherUser.getMobileNumber())
+                        .emailId(fatherUser.getEmailId())
                 .uuid(fatherUser.getUuid())
                 .name(fatherUser.getName())
                 .type(fatherUser.getType())
-                .roles(fatherUser.getRoles()).build();
+                        .tenantId(fatherUser.getTenantId())
+                        .roles(fatherUser.getRoles()).build();
         application.setFather(convertToNewUser(fatherApplicant));
     }
 
@@ -120,18 +115,13 @@ public class BirthApplicationEnrichment {
         User motherUser = motherUserResponse.getUser().get(0);
         log.info(motherUser.toString());
         User motherApplicant = User.builder()
-//                .aadhaarNumber(motherUser.getAadhaarNumber())
-//                .accountLocked(motherUser.getAccountLocked())
-//                .active(motherUser.getActive())
-//                .altContactNumber(motherUser.getAltContactNumber())
-//                .bloodGroup(motherUser.getBloodGroup())
-//                .correspondenceAddress(motherUser.getCorrespondenceAddress())
-//                .correspondenceCity(motherUser.getCorrespondenceCity())
-//                .correspondencePincode(motherUser.getCorrespondencePincode())
-//                .gender(motherUser.getGender())
+                .userName(motherUser.getUserName())
+                .mobileNumber(motherUser.getMobileNumber())
+                .emailId(motherUser.getEmailId())
                 .uuid(motherUser.getUuid())
                 .name(motherUser.getName())
                 .type(motherUser.getType())
+                .tenantId(motherUser.getTenantId())
                 .roles(motherUser.getRoles()).build();
         application.setMother(convertToNewUser(motherApplicant));
     }
